@@ -24,3 +24,17 @@ Este proyecto es una aplicación web progresiva (PWA) diseñada para digitalizar
 Repositorio iniciado el 27/07/2025. Preparado para recibir los archivos generados automáticamente por el Agente GPT.
 
 ---
+
+## Cómo ejecutar
+
+1. Instalar dependencias:
+   ```bash
+   pip install flask mysql-connector-python fpdf2
+   ```
+2. Lanzar el servidor:
+   ```bash
+   python3 app/app.py
+   ```
+3. Acceder a `http://localhost:5000` desde el navegador para usar la aplicación.
+
+La base de datos debe existir con las tablas definidas en `init.sql`. Importa el archivo en tu servidor MySQL antes de iniciar.
