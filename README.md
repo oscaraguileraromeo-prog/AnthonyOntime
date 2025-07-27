@@ -10,7 +10,9 @@ Este proyecto es una aplicación web progresiva (PWA) diseñada para digitalizar
 - Generación de informes mensuales en PDF o CSV.
 - Cálculo de horas ordinarias y horas extra.
 - Diseño responsivo y uso como aplicación instalable desde el navegador.
-- Preparada para incorporar asistente de voz en el futuro.
+- Asistente por voz integrado mediante OpenRouter (requiere API propia).
+- Edición y eliminación de registros existentes.
+- Configuración de API y modelo desde un modal en la página principal.
 
 ## Tecnología prevista
 
@@ -36,5 +38,6 @@ Repositorio iniciado el 27/07/2025. Preparado para recibir los archivos generado
    python3 app/app.py
    ```
 3. Acceder a `http://localhost:5000` desde el navegador para usar la aplicación.
+4. Para generar informes visita la sección "Informes" y elige un rango de fechas.
 
 La base de datos debe existir con las tablas definidas en `init.sql`. Importa el archivo en tu servidor MySQL antes de iniciar.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Jornadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Consulta por Fechas</h1>
+    <form method="get">
+        <label>Inicio:</label>
+        <input type="date" name="inicio" value="{{ inicio or '' }}" required>
+        <label>Fin:</label>
+        <input type="date" name="fin" value="{{ fin or '' }}" required>
+        <button type="submit">Buscar</button>
+    </form>
+    {% if datos %}
+    <table>
+        <tr><th>Fecha</th><th>Inicio</th><th>Fin</th><th>Matrícula</th><th>Horas</th></tr>
+        {% for j in datos %}
+        <tr>
+            <td>{{ j.fecha }}</td>
+            <td>{{ j.hora_inicio }}</td>
+            <td>{{ j.hora_fin }}</td>
+            <td>{{ j.matricula }}</td>
+            <td>{{ j.horas_turno }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>Total horas: {{ total }} - Horas extra: {{ extra }}</p>
+    <a href="/reporte?inicio={{ inicio }}&fin={{ fin }}">Generar PDF</a>
+    <a href="/csv?inicio={{ inicio }}&fin={{ fin }}">Exportar CSV</a>
+    {% endif %}
+    <a href="/">Volver</a>
+</body>
+</html>

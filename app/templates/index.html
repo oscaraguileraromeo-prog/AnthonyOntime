@@ -13,7 +13,7 @@
         <label>Fecha:</label>
         <input type="date" name="fecha" value="{{ last.fecha if last else '' }}" required>
         <label>Hora inicio:</label>
-        <input type="time" name="hora_inicio" required>
+        <input type="time" name="hora_inicio" required onchange="calcularHoras()">
         <label>Matrícula:</label>
         <input type="text" name="matricula" value="{{ last.matricula if last else '' }}" required>
         <label>Kms iniciales:</label>
@@ -21,9 +21,10 @@
         <label>Remolque:</label>
         <input type="text" name="remolque">
         <label>Hora fin:</label>
-        <input type="time" name="hora_fin" required>
+        <input type="time" name="hora_fin" required onchange="calcularHoras()">
         <label>Kms finales:</label>
         <input type="number" name="kms_fin" required>
+        <p>Horas totales del turno: <span id="horasTotales">0</span></p>
         <label>Observaciones:</label>
         <textarea name="observaciones"></textarea>
         <h3>Trayectos</h3>
@@ -32,7 +33,7 @@
         <br>
         <button type="submit">Guardar Jornada</button>
     </form>
-    <a href="/jornadas">Consultar Jornadas Anteriores</a>
+    <a href="/jornadas">Consultar Jornadas Anteriores</a> | <a href="/consulta">Informes</a>
     <button id="voiceBtn" style="display:none">Asistente por Voz</button>
 
     <div id="configModal" class="modal">

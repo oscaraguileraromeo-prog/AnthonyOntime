@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Jornada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Editar Jornada</h1>
+    <form method="post">
+        <label>Fecha:</label>
+        <input type="date" name="fecha" value="{{ jornada.fecha }}" required>
+        <label>Hora inicio:</label>
+        <input type="time" name="hora_inicio" value="{{ jornada.hora_inicio }}" onchange="calcularHoras()" required>
+        <label>Matrícula:</label>
+        <input type="text" name="matricula" value="{{ jornada.matricula }}" required>
+        <label>Kms iniciales:</label>
+        <input type="number" name="kms_inicio" value="{{ jornada.kms_inicio }}" required>
+        <label>Remolque:</label>
+        <input type="text" name="remolque" value="{{ jornada.remolque }}">
+        <label>Hora fin:</label>
+        <input type="time" name="hora_fin" value="{{ jornada.hora_fin }}" onchange="calcularHoras()" required>
+        <label>Kms finales:</label>
+        <input type="number" name="kms_fin" value="{{ jornada.kms_fin }}" required>
+        <label>Observaciones:</label>
+        <textarea name="observaciones">{{ jornada.observaciones }}</textarea>
+        <p>Horas totales del turno: <span id="horasTotales">{{ jornada.horas_turno }}</span></p>
+        <h3>Trayectos</h3>
+        <div id="trayectos">
+            {% for t in trayectos %}
+            <div class="trayecto">
+                <label>Hora salida</label><input type="time" name="t_hora_salida" value="{{ t.hora_salida }}" required>
+                <label>Origen</label><input type="text" name="t_origen" value="{{ t.origen }}" required>
+                <label>Hora llegada</label><input type="time" name="t_hora_llegada" value="{{ t.hora_llegada }}" required>
+                <label>Destino</label><input type="text" name="t_destino" value="{{ t.destino }}" required>
+                <button type="button" onclick="this.parentNode.remove()">Eliminar</button>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+        <button type="button" onclick="addTrayecto()">Añadir Trayecto</button>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="/jornadas">Volver</a>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
