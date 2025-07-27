@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Registro de Jornada</title>
+</head>
+<body>
+    <h1>Registro de Jornada Diaria</h1>
+    <button id="btn-voice" style="display:none">Hablar</button>
+    <button id="btn-config" class="config">⚙️</button>
+    <form id="jornada-form">
+        <label>Fecha y hora de inicio:
+            <input type="datetime-local" name="inicio" required>
+        </label>
+        <label>Matrícula:
+            <input type="text" name="matricula" required>
+        </label>
+        <label>Kms iniciales:
+            <input type="number" name="kms_inicio" required>
+        </label>
+        <label>Remolque:
+            <input type="text" name="remolque">
+        </label>
+        <label>Fecha y hora de fin:
+            <input type="datetime-local" name="fin" required>
+        </label>
+        <label>Kms finales:
+            <input type="number" name="kms_fin" required>
+        </label>
+        <label>Observaciones:
+            <textarea name="observaciones"></textarea>
+        </label>
+        <div id="trayectos">
+            <!-- Subformularios de trayectos -->
+        </div>
+        <button type="button" id="add-trayecto">Añadir Trayecto</button>
+        <button type="submit">Guardar Jornada</button>
+    </form>
+    <a href="/consultar">Consultar Jornadas Anteriores</a>
+
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/voice.js"></script>
+</body>
+</html>

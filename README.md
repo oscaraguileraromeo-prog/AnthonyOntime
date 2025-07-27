@@ -19,9 +19,22 @@ Este proyecto es una aplicación web progresiva (PWA) diseñada para digitalizar
 - Base de datos: MySQL
 - Generación de documentos: wkhtmltopdf o equivalente
 
+## Puesta en marcha
+
+Instala las dependencias en un entorno Python y ejecuta `app.py`:
+
+```bash
+pip install flask flask-cors mysql-connector-python pdfkit
+python app.py
+```
+
+Para la generación de PDF es necesario tener instalado `wkhtmltopdf` en el sistema.
+
+El asistente por voz usa la API de OpenRouter configurada desde el botón de ajustes (⚙️). Si no se introduce una API válida, el botón de voz permanecerá oculto.
+
 ## Estado actual
 
-Repositorio iniciado el 27/07/2025. Preparado para recibir los archivos generados automáticamente por el Agente GPT.
+Aplicación mínima funcional con registro y consulta de jornadas, generación de PDFs y configuración básica del asistente por voz. Algunas funciones avanzadas pueden requerir ajustes adicionales.
 
 ---
 

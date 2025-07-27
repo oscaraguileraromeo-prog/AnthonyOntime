@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{font-family:Arial,Helvetica,sans-serif;}
+        table{width:100%;border-collapse:collapse;}
+        th,td{border:1px solid #000;padding:4px;text-align:left;}
+    </style>
+</head>
+<body>
+    <h1>Informe de Jornada</h1>
+    <p>Conductor: Antonio Becerra Ortega - ONTIME</p>
+    <p>Fecha: {{j.fecha}}</p>
+    <p>Inicio: {{j.hora_inicio}} - Fin: {{j.hora_fin}}</p>
+    <p>Matrícula: {{j.matricula}} Remolque: {{j.remolque}}</p>
+    <p>Kms: {{j.kms_inicio}} - {{j.kms_fin}}</p>
+    <h2>Trayectos</h2>
+    <table>
+        <tr><th>Salida</th><th>Origen</th><th>Llegada</th><th>Destino</th></tr>
+        {% for t in trayectos %}
+        <tr><td>{{t.hora_salida}}</td><td>{{t.origen}}</td><td>{{t.hora_llegada}}</td><td>{{t.destino}}</td></tr>
+        {% endfor %}
+    </table>
+    <p>Observaciones: {{j.observaciones}}</p>
+</body>
+</html>

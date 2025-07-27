@@ -1,0 +1,9 @@
+{
+    "name": "Registro de Jornada ONTIME",
+    "short_name": "Jornada",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f2f6ff",
+    "theme_color": "#004080",
+    "icons": []
+}
