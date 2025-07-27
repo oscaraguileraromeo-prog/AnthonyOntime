@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Consultar Jornadas</title>
+</head>
+<body>
+    <h1>Jornadas Registradas</h1>
+    <form id="filtro">
+        <label>Desde: <input type="date" name="desde"></label>
+        <label>Hasta: <input type="date" name="hasta"></label>
+        <button type="submit">Buscar</button>
+    </form>
+    <table id="tabla-jornadas">
+        <thead>
+            <tr><th>Fecha</th><th>Inicio</th><th>Fin</th><th>Matrícula</th><th>Acciones</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <a href="/">Volver</a>
+    <script src="/static/js/consultar.js"></script>
+</body>
+</html>
