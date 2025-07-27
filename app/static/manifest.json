@@ -1,0 +1,9 @@
+{
+  "name": "Registro Ontime",
+  "short_name": "Ontime",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5faff",
+  "theme_color": "#003366",
+  "icons": []
+}

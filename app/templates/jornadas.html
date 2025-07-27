@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornadas Registradas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Jornadas Anteriores</h1>
+    <table>
+        <tr><th>Fecha</th><th>Inicio</th><th>Fin</th><th>Matrícula</th><th>Kms</th><th>Acciones</th></tr>
+        {% for j in jornadas %}
+        <tr>
+            <td>{{ j.fecha }}</td>
+            <td>{{ j.hora_inicio }}</td>
+            <td>{{ j.hora_fin }}</td>
+            <td>{{ j.matricula }}</td>
+            <td>{{ j.kms_inicio }}-{{ j.kms_fin }}</td>
+            <td>
+                <form action="/jornadas/{{ j.id }}/eliminar" method="post" style="display:inline">
+                    <button type="submit">Borrar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Volver</a>
+</body>
+</html>
